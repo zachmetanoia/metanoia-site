@@ -32,7 +32,11 @@ export const nav = [
 
 export const applyInfo = {
   
-   cohortLabel: "Winter Semester 26/27",
+  export const applyInfo = {
+
+  formUrl: "https://forms.gle/HmvyCs4139xPPZ9Z8",
+  cohortLabel: "Winter Semester 26/27",
+  ... cohortLabel: "Winter Semester 26/27",
   applicationOpens: "September 1, 2026",
   applicationCloses: "October 10, 2026",
   kickoffDate: "October 20, 2026 (MEETanoia)",
