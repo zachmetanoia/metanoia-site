@@ -11,11 +11,11 @@ export const site = {
   tagline: "Renewing Minds. Reviving University.",
   description:
     "METANOIA is a discipleship program for university students in Europe, walking in step with the academic calendar to renew minds, establish character, and send students out as reformers of society.",
-  url: "https://metanoiastudents.com", // ⚠️ UPDATE ME — must match astro.config.mjs `site`
+  url: "https://metanoiastudents.com",
   email: "ines@metanoiastudents.com",
   city: "Munich",
   socials: {
-       instagram: "https://instagram.com/metanoia.students/",
+    instagram: "https://instagram.com/metanoia.students/",
     whatsapp: "https://chat.whatsapp.com/CKVKX2rPN73DqOCF947iVp?mode=gi_t",
   },
 };
@@ -31,12 +31,8 @@ export const nav = [
 ];
 
 export const applyInfo = {
-  
-  export const applyInfo = {
-
   formUrl: "https://forms.gle/HmvyCs4139xPPZ9Z8",
   cohortLabel: "Winter Semester 26/27",
-  ... cohortLabel: "Winter Semester 26/27",
   applicationOpens: "September 1, 2026",
   applicationCloses: "October 10, 2026",
   kickoffDate: "October 20, 2026 (MEETanoia)",
