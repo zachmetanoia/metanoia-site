@@ -4,7 +4,7 @@ import PageHero from "@/components/PageHero.astro";
 import Section from "@/components/Section.astro";
 import Card from "@/components/Card.astro";
 import Button from "@/components/Button.astro";
-import { gatherings, applyInfo } from "@/data/site";
+import { gatherings, applyInfo, site } from "@/data/site";
 ---
 
 <BaseLayout
@@ -83,7 +83,7 @@ import { gatherings, applyInfo } from "@/data/site";
         </div>
         <div>
           <dt class="text-xs font-semibold uppercase tracking-wide text-warm-white/60">Location</dt>
-          <dd class="mt-1 text-warm-white">⚠️ UPDATE ME — city / venue</dd>
+         <dd class="mt-1 text-warm-white">{site.city}</dd>
         </div>
       </dl>
     </div>
