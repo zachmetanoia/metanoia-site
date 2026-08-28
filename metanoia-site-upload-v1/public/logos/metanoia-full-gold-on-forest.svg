@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1300">
+<rect width="1600" height="1300" fill="#1F4D3A"/>
+<g transform="translate(400,40) scale(.8)">
+  <g fill="none" stroke="#B88A3B" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M470 105 A395 395 0 0 0 150 705"/>
+    <path d="M530 105 A395 395 0 0 1 850 705"/>
+    <path d="M150 705 C290 680 395 720 500 835 C605 720 710 680 850 705"/>
+    <path d="M170 760 C305 735 405 765 500 855 C595 765 695 735 830 760"/>
+  </g>
+  <text x="500" y="590" text-anchor="middle" fill="#B88A3B" font-family="Cinzel, 'Times New Roman', serif" font-size="390">M</text>
+</g>
+<text x="800" y="930" text-anchor="middle" fill="#B88A3B" font-family="Cinzel, 'Times New Roman', serif" font-size="170" letter-spacing="28">METANOIA</text>
+<line x1="745" y1="1015" x2="855" y2="1015" stroke="#B88A3B" stroke-width="8"/>
+<text x="800" y="1115" text-anchor="middle" fill="#B88A3B" font-family="Inter, Arial, sans-serif" font-size="45" letter-spacing="8">RENEWING MINDS. REVIVING UNIVERSITY.</text>
+</svg>

@@ -1,0 +1,72 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHero from "@/components/PageHero.astro";
+import Section from "@/components/Section.astro";
+import Button from "@/components/Button.astro";
+import { applyInfo } from "@/data/site";
+---
+
+<BaseLayout
+  title="Apply"
+  description="Apply or express interest in joining the next METANOIA cohort."
+>
+  <PageHero
+    eyebrow="Apply or Express Interest"
+    title="Take the first step."
+    lede="It starts with a short form and a conversation — not a commitment. We just want to get to know you."
+  />
+
+  <Section tone="warm">
+    <div class="grid gap-14 lg:grid-cols-[1.1fr_0.9fr]">
+      <div>
+        <h2 class="text-2xl font-semibold">How it works</h2>
+        <ol class="mt-6 space-y-6">
+          {
+            applyInfo.steps.map((step, i) => (
+              <li class="flex gap-5">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-midnight font-display text-sm text-warm-white">
+                  {i + 1}
+                </span>
+                <div>
+                  <p class="font-semibold text-midnight">{step.title}</p>
+                  <p class="mt-1 text-sm leading-relaxed text-midnight/75">{step.body}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+
+        <div class="mt-10 rounded-2xl border border-gold/30 bg-gold/10 p-6">
+          <p class="text-sm leading-relaxed text-midnight/85">
+            We ask for a modest monthly contribution
+            (<strong>{applyInfo.monthlyTuition}</strong>) — not to make money, but because we've
+            found people value what they invest in. If cost would keep you from joining, please
+            reach out anyway; we don't want money to be the barrier.
+          </p>
+        </div>
+      </div>
+
+      <aside class="rounded-3xl bg-midnight p-8 text-warm-white sm:p-10">
+        <p class="eyebrow text-gold">{applyInfo.cohortLabel}</p>
+        <dl class="mt-6 space-y-4 text-sm">
+          <div>
+            <dt class="text-warm-white/50">Applications open</dt>
+            <dd class="mt-0.5 font-medium">{applyInfo.applicationOpens}</dd>
+          </div>
+          <div>
+            <dt class="text-warm-white/50">Applications close</dt>
+            <dd class="mt-0.5 font-medium">{applyInfo.applicationCloses}</dd>
+          </div>
+          <div>
+            <dt class="text-warm-white/50">Kickoff gathering</dt>
+            <dd class="mt-0.5 font-medium">{applyInfo.kickoffDate}</dd>
+          </div>
+        </dl>
+        <Button href={applyInfo.formUrl} variant="primary" external class="mt-8 w-full">
+          Open the Interest Form
+        </Button>
+        <p class="mt-3 text-center text-xs text-warm-white/50">Opens in a new tab · takes about 3 minutes</p>
+      </aside>
+    </div>
+  </Section>
+</BaseLayout>

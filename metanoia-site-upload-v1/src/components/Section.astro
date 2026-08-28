@@ -1,0 +1,21 @@
+---
+interface Props {
+  tone?: "warm" | "midnight" | "forest";
+  class?: string;
+  as?: "section" | "div";
+}
+
+const { tone = "warm", class: className = "", as: Tag = "section" } = Astro.props;
+
+const toneClasses: Record<string, string> = {
+  warm: "bg-warm-white text-midnight",
+  midnight: "bg-midnight text-warm-white",
+  forest: "bg-forest text-warm-white",
+};
+---
+
+<Tag class:list={["py-16 sm:py-24", toneClasses[tone], className]}>
+  <div class="container-page">
+    <slot />
+  </div>
+</Tag>

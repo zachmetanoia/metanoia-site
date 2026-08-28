@@ -1,0 +1,94 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHero from "@/components/PageHero.astro";
+import Section from "@/components/Section.astro";
+import Card from "@/components/Card.astro";
+import Button from "@/components/Button.astro";
+import { gatherings, applyInfo } from "@/data/site";
+---
+
+<BaseLayout
+  title="Gatherings & Rhythm"
+  description="The weekly and monthly rhythm of METANOIA — Big Meta, Small Meta, and how it all fits around a university semester."
+>
+  <PageHero
+    eyebrow="Gatherings & Semester Rhythm"
+    title="Built to fit inside a real semester, not compete with it."
+    lede="METANOIA moves in step with the university calendar. Here's exactly what your month looks like."
+  />
+
+  <Section tone="warm">
+    <div class="grid gap-6 sm:grid-cols-2">
+      {
+        gatherings.map((g) => (
+          <Card eyebrow={g.frequency} title={g.name}>
+            <p>{g.description}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section tone="midnight">
+    <div class="max-w-2xl">
+      <p class="eyebrow mb-3 text-gold">A typical month</p>
+      <h2 class="text-3xl font-semibold sm:text-4xl">One rhythm, every month.</h2>
+    </div>
+    <ol class="mt-10 grid gap-4 sm:grid-cols-4">
+      <li class="rounded-2xl bg-warm-white/5 p-5">
+        <p class="eyebrow text-gold">Week 1</p>
+        <p class="mt-2 font-display text-lg">Big Meta</p>
+        <p class="mt-1 text-sm text-warm-white/70">Teaching, worship, impartation.</p>
+      </li>
+      <li class="rounded-2xl bg-warm-white/5 p-5">
+        <p class="eyebrow text-gold">Week 2</p>
+        <p class="mt-2 font-display text-lg">Small Meta</p>
+        <p class="mt-1 text-sm text-warm-white/70">Cohort discussion over a shared meal.</p>
+      </li>
+      <li class="rounded-2xl bg-warm-white/5 p-5">
+        <p class="eyebrow text-gold">Week 3</p>
+        <p class="mt-2 font-display text-lg">Big Meta</p>
+        <p class="mt-1 text-sm text-warm-white/70">Teaching, worship, impartation.</p>
+      </li>
+      <li class="rounded-2xl bg-warm-white/5 p-5">
+        <p class="eyebrow text-gold">Week 4</p>
+        <p class="mt-2 font-display text-lg">Small Meta</p>
+        <p class="mt-1 text-sm text-warm-white/70">Cohort discussion over a shared meal.</p>
+      </li>
+    </ol>
+    <p class="mt-6 max-w-2xl text-sm text-warm-white/60">
+      Plus a midweek prayer & fasting rhythm and a weekly Application & Activation assignment —
+      lightweight enough to carry alongside a full course load.
+    </p>
+  </Section>
+
+  <Section tone="warm">
+    <div class="grid gap-10 rounded-3xl bg-forest px-8 py-12 text-warm-white sm:px-14 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="eyebrow mb-3 text-warm-white/70">{applyInfo.cohortLabel}</p>
+        <h2 class="text-2xl font-semibold sm:text-3xl">Kickoff & key dates</h2>
+      </div>
+      <dl class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wide text-warm-white/60">Applications open</dt>
+          <dd class="mt-1 text-warm-white">{applyInfo.applicationOpens}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wide text-warm-white/60">Applications close</dt>
+          <dd class="mt-1 text-warm-white">{applyInfo.applicationCloses}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wide text-warm-white/60">Kickoff gathering</dt>
+          <dd class="mt-1 text-warm-white">{applyInfo.kickoffDate}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wide text-warm-white/60">Location</dt>
+          <dd class="mt-1 text-warm-white">⚠️ UPDATE ME — city / venue</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="mt-8 flex justify-center">
+      <Button href="/apply">Apply or Express Interest</Button>
+    </div>
+  </Section>
+</BaseLayout>

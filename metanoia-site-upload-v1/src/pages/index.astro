@@ -1,0 +1,121 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Section from "@/components/Section.astro";
+import Button from "@/components/Button.astro";
+import Card from "@/components/Card.astro";
+import Logo from "@/components/Logo.astro";
+import { site, semesterYears, gatherings, applyInfo } from "@/data/site";
+---
+
+<BaseLayout title={site.name} description={site.description}>
+  <!-- Hero -->
+  <Section tone="warm" class="pt-16 pb-20 sm:pt-24 sm:pb-28">
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+      <div class="max-w-xl">
+        <p class="eyebrow mb-5">A discipleship program for university students</p>
+        <h1 class="text-4xl font-semibold leading-tight sm:text-5xl">
+          A generation of students, renewed in mind, sent to reform society.
+        </h1>
+        <p class="prose-body mt-6 text-lg">
+          METANOIA walks with you through your university years — not as an extra class, but as a
+          family that helps you become someone whose mind, character, and calling have been made
+          new by the Gospel.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <Button href="/apply" variant="primary">Apply or Express Interest</Button>
+          <Button href="/what-is-metanoia" variant="ghost">What is METANOIA?</Button>
+        </div>
+      </div>
+      <div class="flex justify-center lg:justify-end">
+        <div class="rounded-3xl bg-midnight p-10 sm:p-14">
+          <Logo variant="white-on-midnight" width={260} />
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Metanoia definition + Romans 12:2 -->
+  <Section tone="midnight">
+    <div class="max-w-3xl">
+      <p class="eyebrow mb-4 text-gold">The word behind the name</p>
+      <p class="text-2xl font-display leading-snug sm:text-3xl">
+        <span class="text-gold">METANOIA</span>
+        <span class="text-warm-white/60 font-body text-lg"> (Greek, μετάνοια)</span> — a change of
+        mind; a transformation in the way we think that produces a completely different way we
+        live.
+      </p>
+      <blockquote class="mt-8 border-l-4 border-gold pl-6 text-lg italic leading-relaxed text-warm-white/90">
+        "Do not be conformed to this world, but be transformed by the
+        <span class="font-semibold not-italic text-gold">renewing of your mind</span>, that by
+        testing you may discern what is the will of God, what is good and acceptable and
+        perfect." <cite class="mt-2 block text-sm font-semibold not-italic text-warm-white/60">Romans 12:2</cite>
+      </blockquote>
+    </div>
+  </Section>
+
+  <!-- Three-year pattern -->
+  <Section tone="warm">
+    <div class="mb-12 max-w-2xl">
+      <p class="eyebrow mb-3">The pattern</p>
+      <h2 class="text-3xl font-semibold sm:text-4xl">Come. Stay. Go.</h2>
+      <p class="prose-body mt-4">
+        Three years, mirroring the shape of the Gospels themselves — John the Baptist prepares
+        the way, Jesus shows the way by living among His disciples, and then He commissions them
+        to go and multiply. METANOIA follows the same arc.
+      </p>
+    </div>
+    <div class="grid gap-6 sm:grid-cols-3">
+      {
+        semesterYears.map((y) => (
+          <Card eyebrow={y.year} title={y.title}>
+            <p>{y.description}</p>
+            <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-forest">{y.length}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
+
+  <!-- Weekly rhythm teaser -->
+  <Section tone="forest">
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div>
+        <p class="eyebrow mb-3 text-warm-white/70">The rhythm</p>
+        <h2 class="text-3xl font-semibold sm:text-4xl">
+          Built to fit inside a real university semester.
+        </h2>
+        <p class="mt-4 max-w-md text-warm-white/85">
+          No extra weeknight nobody has time for. METANOIA moves in step with the academic
+          calendar, with a rhythm that's easy to actually keep.
+        </p>
+        <Button href="/gatherings" variant="secondary" class="mt-6">See the full rhythm</Button>
+      </div>
+      <ul class="space-y-4">
+        {
+          gatherings.slice(0, 2).map((g) => (
+            <li class="rounded-2xl bg-midnight/30 p-6">
+              <p class="font-display text-lg text-gold">{g.name}</p>
+              <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-warm-white/60">{g.frequency}</p>
+              <p class="mt-2 text-sm leading-relaxed text-warm-white/85">{g.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section tone="warm">
+    <div class="flex flex-col items-start gap-6 rounded-3xl bg-midnight px-8 py-14 text-warm-white sm:px-14">
+      <p class="eyebrow text-gold">{applyInfo.cohortLabel}</p>
+      <h2 class="max-w-xl text-3xl font-semibold sm:text-4xl">
+        Ready to let your mind be renewed?
+      </h2>
+      <p class="max-w-xl text-warm-white/80">
+        Applications for the next cohort open {applyInfo.applicationOpens}. Express your interest
+        now and a leader will personally reach out.
+      </p>
+      <Button href="/apply" variant="primary">Apply or Express Interest</Button>
+    </div>
+  </Section>
+</BaseLayout>

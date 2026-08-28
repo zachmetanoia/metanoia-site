@@ -1,0 +1,20 @@
+---
+import Section from "./Section.astro";
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  lede?: string;
+  tone?: "warm" | "midnight";
+}
+
+const { eyebrow, title, lede, tone = "warm" } = Astro.props;
+---
+
+<Section tone={tone} class="pt-14 pb-14 sm:pt-20 sm:pb-16">
+  <div class="max-w-3xl">
+    {eyebrow && <p class="eyebrow mb-4">{eyebrow}</p>}
+    <h1 class="text-4xl font-semibold leading-tight sm:text-5xl">{title}</h1>
+    {lede && <p class="mt-5 max-w-2xl text-lg leading-relaxed opacity-85">{lede}</p>}
+  </div>
+</Section>

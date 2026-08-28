@@ -1,0 +1,106 @@
+---
+import Logo from "./Logo.astro";
+import { nav } from "@/data/site";
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+---
+
+<header class="sticky top-0 z-40 border-b border-midnight/10 bg-warm-white/90 backdrop-blur">
+  <div class="container-page flex h-20 items-center justify-between">
+    <a href="/" class="flex items-center gap-2" aria-label="METANOIA home">
+      <Logo width={150} />
+    </a>
+
+    <!-- Desktop nav -->
+    <nav aria-label="Primary" class="hidden lg:block">
+      <ul class="flex items-center gap-7">
+        {
+          nav.map((item) => {
+            const itemPath = item.href.replace(/\/$/, "") || "/";
+            const isActive = itemPath === currentPath;
+            return (
+              <li>
+                <a
+                  href={item.href}
+                  aria-current={isActive ? "page" : undefined}
+                  class:list={[
+                    "text-sm font-medium tracking-wide transition-colors hover:text-gold",
+                    isActive ? "text-gold" : "text-midnight",
+                  ]}
+                >
+                  {item.label}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+
+    <a
+      href="/apply"
+      class="hidden lg:inline-flex items-center rounded-full bg-midnight px-5 py-2.5 text-sm font-semibold text-warm-white transition-colors hover:bg-forest"
+    >
+      Apply
+    </a>
+
+    <!-- Mobile menu toggle -->
+    <button
+      id="menu-toggle"
+      type="button"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-md text-midnight lg:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Open menu"
+    >
+      <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+      </svg>
+      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu panel -->
+  <nav id="mobile-menu" aria-label="Mobile" class="hidden border-t border-midnight/10 bg-warm-white lg:hidden">
+    <ul class="container-page flex flex-col gap-1 py-4">
+      {
+        nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="block rounded-md px-2 py-3 text-base font-medium text-midnight hover:bg-midnight/5"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+      <li class="pt-2">
+        <a
+          href="/apply"
+          class="block rounded-full bg-midnight px-5 py-3 text-center text-sm font-semibold text-warm-white"
+        >
+          Apply
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("icon-open");
+  const iconClose = document.getElementById("icon-close");
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = menu?.classList.contains("hidden") === false;
+    menu?.classList.toggle("hidden");
+    iconOpen?.classList.toggle("hidden");
+    iconClose?.classList.toggle("hidden");
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    toggle.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+  });
+</script>

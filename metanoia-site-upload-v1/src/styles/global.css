@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   METANOIA brand tokens — sourced from the official brand kit.
+   Do not introduce colors outside this palette.
+--------------------------------------------------------------- */
+@theme {
+  --color-midnight: #111111;
+  --color-forest: #1f4d3a;
+  --color-oxford: #102a43;
+  --color-gold: #b88a3b;
+  --color-warm-white: #f7f5f2;
+  --color-pure-white: #ffffff;
+
+  --font-display: "Cinzel", "Trajan Pro 3", "Times New Roman", serif;
+  --font-body: "Inter", "Arial", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-warm-white text-midnight font-body antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-display;
+  letter-spacing: 0.02em;
+}
+
+/* Visible focus ring for keyboard users — accessibility baseline */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  @apply sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50
+    focus:rounded-md focus:bg-midnight focus:px-4 focus:py-2 focus:text-warm-white;
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+}
+
+.eyebrow {
+  @apply font-body text-xs font-semibold uppercase tracking-[0.18em] text-gold;
+}
+
+.prose-body p {
+  @apply mb-4 text-[1.05rem] leading-relaxed text-midnight/85;
+}

@@ -1,0 +1,98 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHero from "@/components/PageHero.astro";
+import Section from "@/components/Section.astro";
+import Card from "@/components/Card.astro";
+import Button from "@/components/Button.astro";
+import { semesterYears } from "@/data/site";
+
+const pillars = [
+  {
+    title: "A small group, not a classroom",
+    body: "You'll walk with 5–8 other students and 2 leaders who know your name, your story, and what you're actually walking through — not a lecture hall of strangers.",
+  },
+  {
+    title: "Practiced, not just taught",
+    body: "Every topic comes with a specific, practical assignment. We believe a change of mind isn't confirmed until you've practiced it in real life.",
+  },
+  {
+    title: "Sent, not just gathered",
+    body: "The goal was never to keep you in a room. METANOIA exists to send you into your major, your friendships, and your calling carrying the Kingdom of God with you.",
+  },
+];
+---
+
+<BaseLayout
+  title="What Is Metanoia?"
+  description="METANOIA is a discipleship program that walks with university students through a three-year pattern of Come, Stay, and Go with Jesus."
+>
+  <PageHero
+    eyebrow="What is Metanoia?"
+    title="Discipleship shaped by how Jesus formed His disciples."
+    lede="Not a Bible study. Not a club. A family committed to walking with you through one of the most formative seasons of your life."
+  />
+
+  <Section tone="warm">
+    <div class="max-w-3xl">
+      <p class="prose-body text-lg">
+        METANOIA is a discipleship program for university students, built to walk in step with
+        the European academic calendar. We exist to help students grow not only in their studies
+        but in their understanding of God — living lives set apart for Jesus while still fully
+        engaged as students, and eventually being sent out as reformers of society, carrying the
+        Kingdom of God into whatever sphere they're headed toward.
+      </p>
+      <p class="prose-body mt-4">
+        Our model is shaped by how Jesus renewed the minds of twelve ordinary disciples and
+        formed them into some of the most influential leaders in history — not through a
+        classroom, but through years of close, ordinary, shared life.
+      </p>
+    </div>
+  </Section>
+
+  <Section tone="warm" class="pt-0">
+    <div class="grid gap-6 sm:grid-cols-3">
+      {
+        pillars.map((pillar) => (
+          <Card title={pillar.title}>
+            <p>{pillar.body}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section tone="forest">
+    <div class="mb-10 max-w-2xl">
+      <p class="eyebrow mb-3 text-warm-white/70">The three-year pattern</p>
+      <h2 class="text-3xl font-semibold sm:text-4xl">Come. Stay. Go.</h2>
+      <p class="mt-4 text-warm-white/85">
+        Mirroring the shape of the Gospels: John the Baptist prepares the way, Jesus shows the
+        way by living among His disciples, and then commissions them to go and multiply.
+      </p>
+    </div>
+    <div class="space-y-4">
+      {
+        semesterYears.map((y, i) => (
+          <div class="flex flex-col gap-2 rounded-2xl bg-midnight/25 p-6 sm:flex-row sm:items-baseline sm:gap-8">
+            <p class="w-32 shrink-0 font-display text-lg text-gold">{y.year}</p>
+            <div>
+              <p class="font-semibold text-warm-white">{y.title} <span class="ml-2 text-xs font-normal uppercase tracking-wide text-warm-white/50">{y.length}</span></p>
+              <p class="mt-1 text-sm leading-relaxed text-warm-white/85">{y.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section tone="warm">
+    <div class="flex flex-col items-start gap-5 rounded-3xl border border-midnight/10 bg-pure-white px-8 py-12 sm:px-14">
+      <h2 class="text-2xl font-semibold sm:text-3xl">Curious what a week actually looks like?</h2>
+      <p class="max-w-xl text-midnight/75">
+        See the full weekly rhythm — Big Meta, Small Meta, and how it all fits around a real
+        course load.
+      </p>
+      <Button href="/gatherings">See Gatherings & Rhythm</Button>
+    </div>
+  </Section>
+</BaseLayout>

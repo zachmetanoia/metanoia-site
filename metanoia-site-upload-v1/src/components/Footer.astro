@@ -1,0 +1,66 @@
+---
+import Logo from "./Logo.astro";
+import { nav, site } from "@/data/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-midnight text-warm-white">
+  <div class="container-page grid gap-10 py-14 lg:grid-cols-3">
+    <div>
+      <Logo variant="white-on-midnight" width={160} />
+      <p class="mt-4 max-w-xs text-sm leading-relaxed text-warm-white/70">
+        {site.description}
+      </p>
+    </div>
+
+    <nav aria-label="Footer">
+      <h2 class="eyebrow mb-4 text-warm-white/60">Explore</h2>
+      <ul class="space-y-2">
+        {
+          nav.map((item) => (
+            <li>
+              <a href={item.href} class="text-sm text-warm-white/85 hover:text-gold">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div>
+      <h2 class="eyebrow mb-4 text-warm-white/60">Connect</h2>
+      <ul class="space-y-2 text-sm text-warm-white/85">
+        <li>
+          <a href={`mailto:${site.email}`} class="hover:text-gold">{site.email}</a>
+        </li>
+        {
+          site.socials.instagram && (
+            <li>
+              <a href={site.socials.instagram} class="hover:text-gold" rel="noopener">
+                Instagram
+              </a>
+            </li>
+          )
+        }
+        {
+          site.socials.whatsapp && (
+            <li>
+              <a href={site.socials.whatsapp} class="hover:text-gold" rel="noopener">
+                WhatsApp Community
+              </a>
+            </li>
+          )
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-warm-white/10">
+    <div class="container-page flex flex-col gap-2 py-6 text-xs text-warm-white/50 sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; {year} METANOIA. All rights reserved.</p>
+      <p class="italic">"Do not be conformed to this world, but be transformed by the renewing of your mind." — Romans 12:2</p>
+    </div>
+  </div>
+</footer>

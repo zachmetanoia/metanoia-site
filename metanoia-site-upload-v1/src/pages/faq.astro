@@ -1,0 +1,29 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHero from "@/components/PageHero.astro";
+import Section from "@/components/Section.astro";
+import FaqAccordion from "@/components/FaqAccordion.astro";
+import Button from "@/components/Button.astro";
+import { faqs } from "@/data/site";
+---
+
+<BaseLayout title="FAQ" description="Frequently asked questions about METANOIA.">
+  <PageHero
+    eyebrow="Frequently Asked Questions"
+    title="Good questions. Honest answers."
+  />
+
+  <Section tone="warm">
+    <div class="max-w-3xl">
+      <FaqAccordion items={faqs} />
+    </div>
+
+    <div class="mt-14 flex flex-col items-start gap-4 rounded-3xl border border-midnight/10 bg-pure-white p-8 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <h2 class="text-lg font-semibold">Still have a question?</h2>
+        <p class="mt-1 text-sm text-midnight/70">We'd genuinely rather you ask than assume.</p>
+      </div>
+      <Button href="/contact">Contact Us</Button>
+    </div>
+  </Section>
+</BaseLayout>
