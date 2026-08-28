@@ -37,7 +37,7 @@ export const applyInfo = {
   applicationOpens: "September 1, 2026",
   applicationCloses: "October 10, 2026",
   kickoffDate: "October 20, 2026",
-  monthlyTuition: "€10 / month",
+  monthlyTuition: "€20 / month",
   steps: [
     {
       title: "Express interest",
