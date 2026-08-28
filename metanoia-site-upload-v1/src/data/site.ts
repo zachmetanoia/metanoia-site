@@ -15,7 +15,7 @@ export const site = {
   email: "ines@metanoiastudents.com",
   city: "Munich",
   socials: {
-    instagram: "", "https://instagram.com/metanoia.students/"
+       instagram: "https://instagram.com/metanoia.students/",
     whatsapp: "https://chat.whatsapp.com/CKVKX2rPN73DqOCF947iVp?mode=gi_t",
   },
 };
