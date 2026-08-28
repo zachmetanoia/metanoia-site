@@ -11,12 +11,12 @@ export const site = {
   tagline: "Renewing Minds. Reviving University.",
   description:
     "METANOIA is a discipleship program for university students in Europe, walking in step with the academic calendar to renew minds, establish character, and send students out as reformers of society.",
-  url: "https://metanoiastudents.com", 
-  email: "ines@metanoiastudents.com", 
-  city: "Munich, Germany",
+  url: "https://metanoia.example", // ⚠️ UPDATE ME — must match astro.config.mjs `site`
+  email: "ines@metanoiastudents.com",
+  city: "Munich",
   socials: {
-    instagram: "https://www.instagram.com/metanoia.students/", 
-    whatsapp: "https://chat.whatsapp.com/CKVKX2rPN73DqOCF947iVp?mode=gi_t", 
+    instagram: "", // ⚠️ UPDATE ME — e.g. "https://instagram.com/metanoia"
+    whatsapp: "https://chat.whatsapp.com/CKVKX2rPN73DqOCF947iVp?mode=gi_t",
   },
 };
 
@@ -31,13 +31,13 @@ export const nav = [
 ];
 
 export const applyInfo = {
-  
+  // ⚠️ UPDATE ME — point this at your real application form (Google Form, Tally, Notion form, etc.)
   formUrl: "https://forms.gle/HmvyCs4139xPPZ9Z8",
-  cohortLabel: "Winter Semester 26/27",
-  applicationOpens: "September 1, 2026",
-  applicationCloses: "October 10, 2026",
-  kickoffDate: "October 20, 2026",
-  monthlyTuition: "€20 / month",
+  cohortLabel: "⚠️ UPDATE ME — e.g. Winter Semester 26/27",
+  applicationOpens: "⚠️ UPDATE ME — e.g. September 1, 2026",
+  applicationCloses: "⚠️ UPDATE ME — e.g. September 20, 2026",
+  kickoffDate: "⚠️ UPDATE ME — e.g. October 6, 2026",
+  monthlyTuition: "⚠️ UPDATE ME — e.g. €15 / month",
   steps: [
     {
       title: "Express interest",
