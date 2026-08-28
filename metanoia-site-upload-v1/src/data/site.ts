@@ -32,12 +32,12 @@ export const nav = [
 
 export const applyInfo = {
   // ⚠️ UPDATE ME — point this at your real application form (Google Form, Tally, Notion form, etc.)
-  formUrl: "https://forms.gle/REPLACE-WITH-YOUR-FORM",
-  cohortLabel: "⚠️ UPDATE ME — e.g. Winter Semester 26/27",
-  applicationOpens: "⚠️ UPDATE ME — e.g. September 1, 2026",
-  applicationCloses: "⚠️ UPDATE ME — e.g. September 20, 2026",
-  kickoffDate: "⚠️ UPDATE ME — e.g. October 6, 2026",
-  monthlyTuition: "⚠️ UPDATE ME — e.g. €15 / month",
+  formUrl: "https://forms.gle/HmvyCs4139xPPZ9Z8",
+  cohortLabel: "Winter Semester 26/27",
+  applicationOpens: "September 1, 2026",
+  applicationCloses: "October 10, 2026",
+  kickoffDate: "October 20, 2026",
+  monthlyTuition: "€10 / month",
   steps: [
     {
       title: "Express interest",
