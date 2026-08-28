@@ -1,8 +1,10 @@
----
+ ---
 /**
  * Renders the official METANOIA lockup as an <img>. Never recreate the
- * wordmark with typed text — both "A" glyphs are custom crossbarless forms
- * (METΛNOIΛ) that only exist in the supplied logo assets.
+ * wordmark with typed text or the brand SVGs — both "A" glyphs are custom
+ * crossbarless forms (METΛNOIΛ) that only exist as flattened artwork in
+ * these PNG files. (The vector .svg exports in the brand kit re-typeset the
+ * word with a normal font and are NOT brand-accurate — do not use them.)
  */
 interface Props {
   variant?: "black" | "white-on-midnight";
@@ -13,8 +15,8 @@ interface Props {
 const { variant = "black", class: className = "", width = 180 } = Astro.props;
 
 const sources: Record<string, string> = {
-  black: "/logos/metanoia-full-black.svg",
-  "white-on-midnight": "/logos/metanoia-full-white-on-midnight.svg",
+  black: "/logos/metanoia-full-black.png",
+  "white-on-midnight": "/logos/metanoia-full-white-on-midnight.png",
 };
 ---
 
@@ -22,7 +24,7 @@ const sources: Record<string, string> = {
   src={sources[variant]}
   alt="METANOIA — Renewing Minds. Reviving University."
   width={width}
-  height={Math.round(width * 0.81)}
+  height={Math.round(width * 0.806)}
   class={className}
   loading="eager"
   decoding="async"
