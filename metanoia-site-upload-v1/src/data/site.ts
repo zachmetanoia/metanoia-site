@@ -10,7 +10,7 @@ export const site = {
   name: "METANOIA",
   tagline: "Renewing Minds. Reviving University.",
   description:
-    "METANOIA is a discipleship program for university students in Europe, walking in step with the academic calendar to renew minds, establish character, and send students out as reformers of society.",
+    "METANOIA is a discipleship program for university students in Munich who carry a hunger to see revival on their campuses and in their generation.",
   url: "https://metanoiastudents.com",
   email: "ines@metanoiastudents.com",
   city: "Munich",
@@ -31,12 +31,22 @@ export const nav = [
 ];
 
 export const applyInfo = {
+  // ⚠️ UPDATE ME — point this at your real application form (Google Form, Tally, Notion form, etc.)
   formUrl: "https://forms.gle/HmvyCs4139xPPZ9Z8",
   cohortLabel: "Winter Semester 26/27",
   applicationOpens: "September 1, 2026",
   applicationCloses: "October 10, 2026",
   kickoffDate: "October 20, 2026 (MEETanoia)",
+  cohortEndDate: "January 26, 2027",
+  minimumCommitment: "at least one full semester",
   monthlyTuition: "€15 / month",
+  requirements: [
+    "Live and study in Munich",
+    "Are actively following Jesus and desire to become more like Him",
+    "Are hungry, teachable, and committed",
+    "Can prioritize the majority of gatherings",
+    "Are willing to commit for at least one full semester",
+  ],
   steps: [
     {
       title: "Express interest",
@@ -62,27 +72,21 @@ export type Gathering = {
 export const gatherings: Gathering[] = [
   {
     name: "Big Meta",
-    frequency: "1st & 3rd week of the month · ~3 hours",
+    frequency: "1st & 3rd Tuesday of the month",
     description:
-      "All cohorts gather together for teaching on the week's topic, worship, and impartation.",
+      "All cohorts gather for teaching, discussion, worship, prayer, and equipping.",
   },
   {
     name: "Small Meta",
-    frequency: "2nd & 4th week of the month · over a shared meal",
+    frequency: "alternating weeks",
     description:
-      "Your cohort (5–8 students, 2 leaders) discusses the topic and identifies your personal Metanoia — the specific way God is renewing your mind that week.",
+      "Groups of 5–8 students + 2 leaders meet to go deeper, process life together, and grow in discipleship.",
   },
   {
-    name: "Application & Activation",
-    frequency: "every week",
+    name: "Outreach & Sending",
+    frequency: "throughout the semester",
     description:
-      "Every topic comes with a specific, practical assignment. A change of mind isn't confirmed until you've practiced it.",
-  },
-  {
-    name: "Prayer & Fasting",
-    frequency: "midweek rhythm",
-    description:
-      "A corporate midweek rhythm of prayer and fasting that undergirds the whole semester.",
+      "Students participate in outreach, Glory Nights, and citywide events.",
   },
 ];
 
@@ -125,12 +129,17 @@ export const faqs: FaqItem[] = [
   {
     question: "How much time does this actually take each week?",
     answer:
-      "Plan on one Big Meta or Small Meta gathering most weeks (2–3 hours), plus a short weekly application assignment. It's designed to fit around a full university course load, not compete with it.",
+      "Plan on one Big Meta or Small Meta gathering most weeks, plus occasional outreach and citywide events. It's designed to fit around a full university course load, not compete with it.",
   },
   {
     question: "What is a 'Small Meta' cohort?",
     answer:
-      "A Small Meta is your core group — 5 to 8 students and 2 leaders — who meet every other week over a shared meal to talk honestly about what God is doing in your life and hold each other to the commitments you're making.",
+      "A Small Meta is your core group — 5 to 8 students and 2 leaders — who meet on alternating weeks to go deeper, process life together, and grow in discipleship.",
+  },
+  {
+    question: "How long do I need to commit for?",
+    answer:
+      "At least one full semester to start. Year 1 (Come to Jesus) is a two-semester journey, and most students continue into the second semester once they've experienced the first.",
   },
   {
     question: "Can I join partway through a semester?",
@@ -138,9 +147,9 @@ export const faqs: FaqItem[] = [
       "It's easiest to start at the beginning of a semester so you're not missing foundational weeks, but reach out — depending on timing, we may be able to fold you into a cohort already underway.",
   },
   {
-    question: "What happens after Year 1?",
+    question: "What happens after my first semester?",
     answer:
-      "Year 1 (Come to Jesus) is where every student begins. Year 2 (Stay with Jesus) goes deeper into character and spiritual disciplines. Year 3 (Go with Jesus) is invite-only, for students ready to lead, evangelize, and help plant METANOIA somewhere new.",
+      "Most students continue into semester two to complete Year 1 (Come to Jesus). From there, Year 2 (Stay with Jesus) goes deeper into character and spiritual disciplines, and Year 3 (Go with Jesus) is invite-only, for students ready to lead, evangelize, and help plant METANOIA somewhere new.",
   },
   {
     question: "Is this only for one university?",
