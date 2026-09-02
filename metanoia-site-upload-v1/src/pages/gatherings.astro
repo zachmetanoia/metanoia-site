@@ -43,7 +43,7 @@ import { gatherings, applyInfo, site } from "@/data/site";
       <li class="rounded-2xl bg-warm-white/5 p-5">
         <p class="eyebrow text-gold">Week 2</p>
         <p class="mt-2 font-display text-lg">Small Meta</p>
-        <p class="mt-1 text-sm text-warm-white/70">Cohort discussion over a shared meal.</p>
+        <p class="mt-1 text-sm text-warm-white/70">Cohort meets to go deeper together.</p>
       </li>
       <li class="rounded-2xl bg-warm-white/5 p-5">
         <p class="eyebrow text-gold">Week 3</p>
@@ -53,9 +53,13 @@ import { gatherings, applyInfo, site } from "@/data/site";
       <li class="rounded-2xl bg-warm-white/5 p-5">
         <p class="eyebrow text-gold">Week 4</p>
         <p class="mt-2 font-display text-lg">Small Meta</p>
-        <p class="mt-1 text-sm text-warm-white/70">Cohort discussion over a shared meal.</p>
+        <p class="mt-1 text-sm text-warm-white/70">Cohort meets to go deeper together.</p>
       </li>
     </ol>
+    <p class="mt-4 max-w-2xl text-xs text-warm-white/50">
+      Big Meta lands on the 1st & 3rd Tuesday of the month; Small Meta groups meet on the
+      alternating weeks in between.
+    </p>
     <p class="mt-6 max-w-2xl text-sm text-warm-white/60">
       Plus a midweek prayer & fasting rhythm and a weekly Application & Activation assignment —
       lightweight enough to carry alongside a full course load.
@@ -82,8 +86,12 @@ import { gatherings, applyInfo, site } from "@/data/site";
           <dd class="mt-1 text-warm-white">{applyInfo.kickoffDate}</dd>
         </div>
         <div>
+          <dt class="text-xs font-semibold uppercase tracking-wide text-warm-white/60">Cohort runs through</dt>
+          <dd class="mt-1 text-warm-white">{applyInfo.cohortEndDate}</dd>
+        </div>
+        <div>
           <dt class="text-xs font-semibold uppercase tracking-wide text-warm-white/60">Location</dt>
-         <dd class="mt-1 text-warm-white">{site.city}</dd>
+          <dd class="mt-1 text-warm-white">{site.city}</dd>
         </div>
       </dl>
     </div>
