@@ -36,6 +36,23 @@ import { applyInfo } from "@/data/site";
           }
         </ol>
 
+        <div class="mt-10">
+          <h2 class="text-2xl font-semibold">Who this is for</h2>
+          <p class="mt-2 text-sm leading-relaxed text-midnight/75">
+            We ask everyone who joins to meet a few simple commitments:
+          </p>
+          <ul class="mt-4 space-y-3">
+            {
+              applyInfo.requirements.map((req) => (
+                <li class="flex gap-3 text-sm leading-relaxed text-midnight/85">
+                  <span class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" aria-hidden="true" />
+                  <span>{req}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
         <div class="mt-10 rounded-2xl border border-gold/30 bg-gold/10 p-6">
           <p class="text-sm leading-relaxed text-midnight/85">
             We ask for a modest monthly contribution
@@ -60,6 +77,14 @@ import { applyInfo } from "@/data/site";
           <div>
             <dt class="text-warm-white/50">Kickoff gathering</dt>
             <dd class="mt-0.5 font-medium">{applyInfo.kickoffDate}</dd>
+          </div>
+          <div>
+            <dt class="text-warm-white/50">Cohort runs through</dt>
+            <dd class="mt-0.5 font-medium">{applyInfo.cohortEndDate}</dd>
+          </div>
+          <div>
+            <dt class="text-warm-white/50">Minimum commitment</dt>
+            <dd class="mt-0.5 font-medium capitalize">{applyInfo.minimumCommitment}</dd>
           </div>
         </dl>
         <Button href={applyInfo.formUrl} variant="primary" external class="mt-8 w-full">
